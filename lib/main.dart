@@ -10,13 +10,12 @@ class MyApp extends StatefulWidget{
 }
 
 class MyAppState extends State<MyApp> {
-
   int _currentIndex=0;
-  Widget callPage(int currentIndexP){
-    switch (currentIndexP) {
-      case 0:return Pageone();
-      case 1:return Pagetwo();
-      case 2:return Pagethree();
+  Widget callPage(int currentIndex){
+    switch (currentIndex) {
+      case 0: return Pageone();
+      case 1: return Pagetwo();
+      case 2: return Pagethree();
         
         break;
       default:return Pageone();
@@ -31,15 +30,9 @@ class MyAppState extends State<MyApp> {
           title: Text('Scaffold Example'),
         ),
         body: callPage(_currentIndex),
-        backgroundColor: Colors.deepOrange,
-        floatingActionButton: FloatingActionButton.extended(
-          icon: Icon(Icons.access_time),
-          label: Text('Hit Me'),
-          onPressed: ()=>print('You pressed me'),
-        ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
-          onTap: (value) {
+          onTap: (value){
             _currentIndex=value;
             setState(() {
                           
@@ -47,16 +40,16 @@ class MyAppState extends State<MyApp> {
           },
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.add_alarm),
-              title: Text('Alarm')
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add_box),
-              title: Text('Add Box')
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.add_circle),
               title: Text('Circle')
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add_location),
+              title: Text('Location')
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add_to_photos),
+              title: Text('Photos')
             )
           ],
         ),

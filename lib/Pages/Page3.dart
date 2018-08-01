@@ -9,7 +9,7 @@ class PagethreeState extends State<Pagethree> {
   @override
   Widget build(BuildContext context){
     return Container(
-      color: Colors.yellow,
+      color: Colors.blueAccent,
     );
   }
 }
